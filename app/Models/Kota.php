@@ -10,8 +10,10 @@ class Kota extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-
     public function booking(){
         return $this->hasMany('App\Models\Booking');
+    }
+    public function kecamatan(){
+        return $this->hasMany(Kecamatan::class);
     }
 }

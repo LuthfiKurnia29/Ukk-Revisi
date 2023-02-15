@@ -1,0 +1,15 @@
+p{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+/* img{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+} */
+
+li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}

@@ -14,4 +14,7 @@ class Merk extends Model
     public function booking(){
         return $this->hasMany('App\Models\Booking');
     }
+    public function barang(){
+        return $this->belongsTo(Barang::class);
+    }
 }

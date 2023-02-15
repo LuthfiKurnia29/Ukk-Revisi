@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('detail_servis', function (Blueprint $table) {
             $table->id();
             $table->foreignId('booking_id')->constrained('bookings')->onDelete('cascade');
+            $table->foreignId('sparepart_id')->nullable()->default(null)->constrained('beli_spare_parts')->onDelete('restrict');
             $table->foreignId('teknisi_id')->constrained('teknisis')->onDelete('restrict');
-            $table->date('estimasi_selesai');
             $table->string('keterangan_teknisi');
-            $table->double('harga');
-            $table->enum('status',['sedang_dikerjakan','menunggu_pembayaran','selesai'])->default('sedang_dikerjakan');
+            $table->double('harga')->nullable();
+            $table->enum('status',['Sedang Dikerjakan','Menunggu Pembayaran','Selesai'])->nullable()->default('Sedang Dikerjakan');
             $table->timestamps();
         });
     }

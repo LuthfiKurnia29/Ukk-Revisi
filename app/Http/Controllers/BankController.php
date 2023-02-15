@@ -38,4 +38,29 @@ class BankController extends Controller
 
         return redirect('/data-bank');
     }
+
+    public function edit($id){
+        $bank = Bank::find($id);
+        return view('admin.bank.edit',[
+            'title' => 'Edit Data Bank',
+            'bank' => $bank
+        ]);
+    }
+
+    public function update(Request $request, $id){
+        $data = $request->validate([
+            'logo' => 'image|max:2056',
+            'nm_bank' => 'string',
+            'kd_bank' => 'string',
+            'no_rekening' => 'string',
+            'nama_pemilik' => 'string'
+        ]);
+
+        if($request->file(['logo'])){
+            $data['logo'] = $request->file(['logo'])->store('logo', 'public');
+        }
+
+        Bank::where('id', $id)->update($data);
+        return redirect('/data-bank');
+    }
 }

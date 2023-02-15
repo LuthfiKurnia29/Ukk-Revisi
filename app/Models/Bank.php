@@ -9,4 +9,7 @@ class Bank extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    public function pembayaran(){
+        return $this->hasMany('App\Models\Pembayaran');
+    }
 }

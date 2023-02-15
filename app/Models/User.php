@@ -48,4 +48,10 @@ class User extends Authenticatable
     public function booking(){
         return $this->hasMany('App\Models\Booking');
     }
+    public function pembayaran(){
+        return $this->hasMany('App\Models\Pembayaran');
+    }
+    public function komentar(){
+        return $this->hasMany('App\Models\Komentar');
+    }
 }

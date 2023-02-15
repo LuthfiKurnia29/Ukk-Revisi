@@ -12,6 +12,6 @@ class Teknisi extends Model
     protected $guarded = ['id'];
 
     public function detail(){
-        return $this->hasOne('App\Models\Teknisi');
+        return $this->hasOne('App\Models\DetailServis');
     }
 }

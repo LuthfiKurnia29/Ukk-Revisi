@@ -18,7 +18,6 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
     <!-- Libraries Stylesheet -->
     <link href={{ asset("front/lib/owlcarousel/assets/owl.carousel.min.css") }} rel="stylesheet">
 
@@ -27,6 +26,10 @@
 
     <!-- Template Stylesheet -->
     <link href={{ asset("front/css/style.css") }} rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 
 <body>
@@ -63,7 +66,7 @@
         </div>
     </div> --}}
     <!-- Topbar End -->
-
+    @include('sweetalert::alert')
 
     <!-- Navbar Start -->
    @include('front.partials.navbar')
@@ -71,16 +74,15 @@
 
 
         @yield('container')
-        @yield('script')
+   
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-success btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- Footer Start -->
     @include('front.partials.footer')
     <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+</body>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -88,9 +90,14 @@
     <script src={{ asset("front/lib/easing/easing.min.js") }}></script>
     <script src={{ asset("front/lib/waypoints/waypoints.min.js") }}></script>
     <script src={{ asset("front/lib/owlcarousel/owl.carousel.min.js") }}></script>
-
     <!-- Template Javascript -->
     <script src={{ asset("front/js/main.js") }}></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    {{-- <script src="/node_modules/sweetalert2/dist/sweetalert2.all.js"></script> --}}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-</html>
+    @yield('script')
+
+    </html>
+    

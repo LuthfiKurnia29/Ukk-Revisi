@@ -32,6 +32,10 @@ class Booking extends Model
     }
 
     public function detail(){
-        return $this->hasOne('App\Models\DetailServis');
+        return $this->hasOne('App\Models\DetailServis', 'booking_id');
+    }
+
+    public function sparepart(){
+        return $this->hasMany('App\Models\BeliSparePart');
     }
 }

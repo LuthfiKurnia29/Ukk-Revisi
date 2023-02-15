@@ -1,31 +1,32 @@
-@extends('admin.layouts.index')
+@extends('admin.layouts.main')
 @section('container')
-<div class="container m-5">
-    <form class="row g-3" action="/tambah-bank" method="POST" enctype="multipart/form-data">
-      @csrf
-    <div class="col-md-6">
-      <label for="inputNamaBank" class="form-label text-white"> Nama Bank</label>
-      <input type="text" name="nm_bank" class="form-control bg-white" id="inputEmail4">
+    <div class="container mt-5">
+        <h3 class="text-center">Tambah Data Bank</h3>
+        <form action="/tambah-bank" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-3">
+                <label class="form-label">Logo</label>
+                <input class="form-control bg-white" type="file" name="logo">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nama Bank</label>
+                <input type="text" class="form-control" name="nm_bank" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Kode Bank</label>
+                <input type="text" class="form-control" name="kd_bank" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">No Rekening</label>
+                <input type="number" class="form-control" name="no_rekening" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nama Pemilik</label>
+                <input type="text" class="form-control" name="nama_pemilik" autocomplete="off">
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-success">Tambah</button>
+            </div>
+        </form>
     </div>
-    <div class="col-md-6">
-      <label for="inputKodeBank" class="form-label text-white">Kode Bank</label>
-      <input type="text" name="kd_bank" class="form-control bg-white" id="inputPassword4">
-    </div>
-    <div class="col-12">
-      <label for="inputLogo" class="form-label text-white">Logo Bank</label>
-      <input type="file" name="logo" class="form-control bg-white" id="inputAddress">
-    </div>
-    <div class="col-md-6">
-      <label for="inputNoRek" class="form-label text-white">No Rekening</label>
-      <input type="text" class="form-control bg-white" name="no_rekening" id="inputAddress2">
-    </div>
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label text-white">Nama Pemilik</label>
-      <input type="text" class="form-control bg-white" name="nama_pemilik" id="inputCity">
-    </div>
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Tambah Data</button>
-    </div>
-  </form>
-</div>
 @endsection

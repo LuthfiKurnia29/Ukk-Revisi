@@ -1,38 +1,97 @@
-<div class="sidebar pe-4 pb-3">
-    <nav class="navbar bg-secondary navbar-dark">
-        <a href="index.html" class="navbar-brand mx-4 mb-3">
-            <h3 class="text-primary text-center" style="font-size: 20px"><i class="fa fa-user-edit me-2"></i>2-Cool | Admin</h3>
-        </a>
-        <div class="d-flex align-items-center ms-4 mb-4">
-            <div class="position-relative">
-                <img class="rounded-circle" src={{ asset("admin/img/user.jpg") }} alt="" style="width: 40px; height: 40px;">
-                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+       <img src="{{ asset('front/img/logo.png') }}" class="text-center w-150 h-100"  alt="">
+      </a>
+    </div>
+    <hr class="horizontal light mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('dashboard') ? 'active bg-gradient-primary' : '' }} " href="/dashboard">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
             </div>
-            <div class="ms-3">
-                <h6 class="mb-0">Jhon Doe</h6>
-                <span>Admin</span>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('teknisi') ? 'active bg-gradient-primary' : '' }}" href="/teknisi">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              Data Teknisi
             </div>
-        </div>
-        <div class="navbar-nav w-100">
-            <a href="/dashboard" class="nav-item nav-link {{ Request::is('dashboard') ? 'active' : '' }}"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link {{ Request::is('teknisi')  ? 'active' : '' }} dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Master Data</a>
-
-                <div class="dropdown-menu bg-transparent border-0 {{ Request::is('teknisi')  ? 'show' : '' }}">
-                    <a href="/teknisi" class="dropdown-item  {{ Request::is('teknisi') ? 'active' : '' }}">Data Teknisi</a>
-                    <a href="/data-bank" class="dropdown-item ">Data Bank</a>
-                </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('data-bank') ? 'active bg-gradient-primary' : '' }}" href="/data-bank">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              Data Bank
             </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Servis</a>
-                <div class="dropdown-menu bg-transparent border-0">
-                    <a href="/servis-dashboard" class="dropdown-item">Servis Masuk</a>
-                    <a href="signup.html" class="dropdown-item">Sign Up</a>
-                    <a href="404.html" class="dropdown-item">404 Error</a>
-                    <a href="blank.html" class="dropdown-item">Blank Page</a>
-                </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('data-wilayah') ? 'active bg-gradient-primary' : '' }}" href="/data-wilayah">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              Data Wilayah
             </div>
-        </div>
-    </nav>
-</div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('servis-dashboard') ? 'active bg-gradient-primary' : '' }}" href="/servis-dashboard">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              Servis Masuk
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('servis-dikerjakan') ? 'active bg-gradient-primary' : '' }}" href="/servis-dikerjakan">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+            Servis Dikerjakan
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('servis-menunggubayar') ? 'active bg-gradient-primary' : '' }}" href="/servis-menunggubayar">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              Servis Menunggu Pembayaran
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white {{ Request::is('tampil-selesai') ? 'active bg-gradient-primary' : '' }}" href="/tampil-selesai">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              Servis Selesai
+            </div>
+          </a>
+        </li>
+        {{-- <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="./pages/profile.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">person</i>
+            </div>
+            <span class="nav-link-text ms-1">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="./pages/sign-in.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">login</i>
+            </div>
+            <span class="nav-link-text ms-1">Sign In</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white " href="./pages/sign-up.html">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">assignment</i>
+            </div>
+            <span class="nav-link-text ms-1">Sign Up</span>
+          </a>
+        </li> --}}
+      </ul>
+    </div>
+  </aside>

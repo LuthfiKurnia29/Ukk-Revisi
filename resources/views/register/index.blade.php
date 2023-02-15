@@ -38,7 +38,7 @@
                             <div class="col-12">
                                 <div class="input-group">
                                     <label class="label">Nama Lengkap</label>
-                                    <input class="input--style-4" type="text" name="name">
+                                    <input class="input--style-4" type="text" name="name" autocomplete="off">
                                 </div>
                             </div>
                             {{-- <div class="col-2">
@@ -49,16 +49,12 @@
                             </div> --}}
                         {{-- </div> --}}
                         {{-- <div class="row row-space"> --}}
-                            <div class="col-12">
+                              {{-- <div class="col-12">
                                 <div class="input-group">
                                     <label class="label">Alamat</label>
                                     <input class="input--style-4" type="text" name="alamat">
-                                    {{-- <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
-                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div> --}}
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Gender</label>
@@ -79,13 +75,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="email" autocomplete="off">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="no_telepon">
+                                    <input class="input--style-4" type="text" name="no_telepon" autocomplete="off">
                                 </div>
                             </div>
                         </div>
@@ -93,8 +89,9 @@
                             <label class="label">Password</label>
                             <input class="input--style-4" type="password" name="password">
                         </div>
-                        <div class="p-t-15">
+                        <div class="p-t-15 d-flex justify-content-between">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <a href="/sign-in" class="btn btn--radius-2 btn--green" type="button">Sudah Memiliki Akun</a>
                         </div>
                     </form>
                 </div>

@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('kendalas', function (Blueprint $table) {
             $table->id();
             $table->string('nm_kendala');
-            $table->double('harga');
             $table->timestamps();
         });
     }

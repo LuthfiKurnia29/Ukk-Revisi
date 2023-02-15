@@ -14,11 +14,12 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'avatar' => 'nullable',
             'name' => 'required|max:255',
             'email' => 'required|email:dns',
             'no_telepon' => 'required',
             'password' => 'required',
-            'alamat' => 'required',
+            'alamat' => 'nullable',
             'is_admin' => 'default'
         ]);
         $data['password'] = bcrypt($data['password']);

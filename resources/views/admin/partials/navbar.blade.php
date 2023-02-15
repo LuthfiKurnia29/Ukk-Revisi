@@ -1,51 +1,28 @@
-<nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-    <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
-        <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
-    </a>
-    <a href="#" class="sidebar-toggler flex-shrink-0">
-        <i class="fa fa-bars"></i>
-    </a>
-    <form class="d-none d-md-flex ms-4">
-        <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-    </form>
-    <div class="navbar-nav align-items-center ms-auto">
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="fa fa-bell me-lg-2"></i>
-                <span class="d-none d-lg-inline-flex">Notification</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">Profile updated</h6>
-                    <small>15 minutes ago</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">New user added</h6>
-                    <small>15 minutes ago</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">Password changed</h6>
-                    <small>15 minutes ago</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item text-center">See all notifications</a>
-            </div>
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+    <div class="container-fluid py-1 px-3">
+      <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="input-group input-group-outline">
+            <label class="form-label">Type here...</label>
+            <input type="text" class="form-control">
+          </div>
         </div>
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <img class="rounded-circle me-lg-2" src={{ asset("admin/img/user.jpg") }} alt="" style="width: 40px; height: 40px;">
-                <span class="d-none d-lg-inline-flex">{{ auth()->user()->name }}</span>
+        <ul class="navbar-nav  justify-content-end">
+          <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+              <div class="sidenav-toggler-inner">
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+                <i class="sidenav-toggler-line"></i>
+              </div>
             </a>
-            <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">My Profile</a>
-                <a href="#" class="dropdown-item">Settings</a>
-                <form action="/logout" method="post">
-                    @csrf
-                    <button type="submit" class="dropdown-item">Keluar</button>
-                </form>
-            </div>
-        </div>
+          </li>
+          <li class="nav-item px-3 d-flex align-items-center">
+            <a href="javascript:;" class="nav-link text-body p-0">
+              <i class="fa fa-person fixed-plugin-button-nav cursor-pointer">Admin</i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>

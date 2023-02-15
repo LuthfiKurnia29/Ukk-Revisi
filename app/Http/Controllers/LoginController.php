@@ -28,9 +28,7 @@ class LoginController extends Controller
             }
         }
  
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        return back()->with('error','Username dan Password Tidak Sesuai!');
     }
 
     public function logout(Request $request)
@@ -41,6 +39,6 @@ class LoginController extends Controller
         
             $request->session()->regenerateToken();
         
-            return redirect('/sign-in');
+            return redirect('/');
         }
 }

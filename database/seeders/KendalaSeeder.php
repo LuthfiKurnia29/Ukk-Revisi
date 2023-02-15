@@ -17,10 +17,10 @@ class KendalaSeeder extends Seeder
     public function run()
     {
         DB::table('kendalas')->delete();
-        Kendala::create(['nm_kendala' => 'Isi Freon & Cuci AC', 'harga' => 75000]);
-        Kendala::create(['nm_kendala' => 'Instalasi Rusak', 'harga' => 90000]);
-        Kendala::create(['nm_kendala' => 'AC Bocor', 'harga' => 50000]);
-        Kendala::create(['nm_kendala' => 'AC Tidak Dingin', 'harga' => 100000]);
-        Kendala::create(['nm_kendala' => 'AC beraroma Tidak Sedap', 'harga' => 90000]);
+        Kendala::create(['nm_kendala' => 'Isi Freon & Cuci AC']);
+        Kendala::create(['nm_kendala' => 'Instalasi Rusak']);
+        Kendala::create(['nm_kendala' => 'AC Bocor']);
+        Kendala::create(['nm_kendala' => 'AC Tidak Dingin']);
+        Kendala::create(['nm_kendala' => 'AC beraroma Tidak Sedap']);
     }
 }

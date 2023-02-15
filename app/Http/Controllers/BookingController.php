@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 
-use App\Models\Kendala;
 use App\Models\Kota;
-use Illuminate\Http\Request;
 use App\Models\Merk;
-use App\Models\Kecamatan;
 use App\Models\Booking;
-use App\Models\BookingKendala;
+use App\Models\Kendala;
+use App\Models\Teknisi;
+use App\Models\Kecamatan;
 use App\Models\BookingMerk;
+use Illuminate\Http\Request;
+use App\Models\BookingKendala;
 
 class BookingController extends Controller
 {
@@ -29,14 +31,18 @@ class BookingController extends Controller
 
     public function store(Request $request){
         $data = $request->validate([
-            'kendala_id' => 'array',
             'tanggal_booking' => 'required',
-            'jumlah_barang' => 'required',
-            'merk_id' => 'array',
             'kota_id' => 'required',
+            'catatan' => 'nullable',
             'kecamatan_id' => 'required',
-            'alamat_lengkap' => 'required'
+            'alamat_lengkap' => 'required',
+            'sudah_dibaca' => 'nullable'
         ]);
+
+        if (Booking::where('tanggal_booking', $data['tanggal_booking'])->first()){
+            alert()->warning('Tidak Bisa','Pesanan di Hari dan jam ini sudah ada');
+            return redirect()->back();
+        }
 
         $data['user_id'] = auth()->user()->id;
         $booking = Booking::create($data);
@@ -58,14 +64,8 @@ class BookingController extends Controller
                 ]);
             }
         }
-
+        Alert::success('Success', 'Berhasil Menambah pesanan');
         return redirect('/list-servis'); 
     }
-
-    public function show($id){
-        $book = Booking::where('user_id', auth()->user()->id)->get();
-        return view('front.servis.list', compact($book));
-    }
-
     
 }

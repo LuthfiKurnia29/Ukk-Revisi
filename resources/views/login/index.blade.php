@@ -22,7 +22,11 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+	@if(Session('error'))
+		<div class="alert alert-danger">
+		{{Session('error')}}
+		</div>
+	@endif
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -36,7 +40,7 @@
 						Silahkan Masuk
 					</span>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="Email" autocomplete="off" autofocus>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>

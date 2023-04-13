@@ -18,7 +18,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Apa Kendalamu?</label>
-                        <select class="js-example-basic-multiple form-control" name="kendala_id[]P" multiple="multiple">
+                        <select class="js-example-basic-multiple form-control" name="kendala_id[]" multiple="multiple">
                         @foreach ($kendalas as $kendala)
                                 <option value="{{ $kendala->id }}">{{ $kendala->nm_kendala }}</option>
                         @endforeach
